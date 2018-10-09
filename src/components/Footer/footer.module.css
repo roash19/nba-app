@@ -1,0 +1,23 @@
+.footer {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #242424;
+}
+
+.logo {
+  display: flex;
+}
+
+.logo img {
+  height: 20px;
+  padding: 0 10px;
+}
+
+.footer p {
+  flex-grow: 1;
+  margin: 0;
+  color: #878787;
+  font-size: 12px;
+}
