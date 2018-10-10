@@ -20,7 +20,7 @@ class Slider extends Component {
 
   render() {
     return (
-      <div>
+      <div className="slider">
         <SliderTemplates data={this.state.news} type={this.props.type} settings={this.props.settings}/>
       </div>
     );
