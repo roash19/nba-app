@@ -41,13 +41,23 @@ class NewsList extends Component {
       case ('card') :
         teplate = this.state.items.map(item => {
           return (
-            <div>
-              <div className={styles.newsList_item}>
-                <Link to={`/articles/${item.id}`} className={styles.newsList_link}>
-                  {item.title}
-                </Link>
+            <CSSTransition
+              classNames={{
+                enter: styles.newsList_wrapper,
+                enterActive: styles.newsList_item_enter
+              }}
+              timeout={500}
+              key={item.id}
+            >
+              <div>
+                <div className={styles.newsList_item}>
+                  <Link to={`/articles/${item.id}`} className={styles.newsList_link}>
+                    {item.title}
+                  </Link>
+                </div>
               </div>
-            </div>
+            </CSSTransition>
+
           )
         });
         break;
@@ -61,10 +71,22 @@ class NewsList extends Component {
   render() {
     return (
       <div>
-        { this.renderList(this.props.type) }
+        <TransitionGroup
+          component="div"
+          className="list"
+        >
+          { this.renderList(this.props.type) }
+        </TransitionGroup>
+
         <div onClick={() => this.loadMore()}>
           LOAD MORE
         </div>
+
+        {/*<Button*/}
+          {/*type="loadMore"*/}
+          {/*loadMore={() => this.loadMore()}*/}
+          {/*cms="LOAD MORE"*/}
+        {/*/>*/}
       </div>
     )
   }

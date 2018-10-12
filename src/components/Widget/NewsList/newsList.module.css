@@ -1,5 +1,5 @@
 .newsList_item {
-  padding: 8px 5px 0 5px;
+  padding: 10px;
   background: #fff;
   border-bottom: 1px solid rgba(0,0,0,0.2);
   min-height: 50px;
@@ -9,5 +9,16 @@
   font-size: 14px;
   line-height: 20px;
   color: #525252;
-  padding: 5px 0;
+  font-weight: 500;
+}
+
+.newsList_wrapper {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 0.5s ease-in-out;
+}
+
+.newsList_item_enter {
+  opacity: 1;
+  transform: translateX(0%);
 }
