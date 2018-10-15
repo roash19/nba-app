@@ -33,6 +33,16 @@ class VideosArticles extends Component {
     return (
       <div>
         <Header teamData={team[0]}/>
+        <div className={styles.videoWrapper}>
+          <h1>{article.title}</h1>
+          <iframe
+            title="videoplayer"
+            width="100%"
+            height="300px"
+            src={`https://www.youtube.com/embed/${article.url}`}
+          >
+          </iframe>
+        </div>
       </div>
     )
   }
