@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
-import {CSSTransition, TransitionGroup} from 'react-transition-group';
 import axios from 'axios';
 import styles from './videosList.module.css';
 
-import { URL } from '../../../config';
+import {URL} from '../../../config';
 import Button from '../Buttons/Button';
 import VideosListTemplate from './VideosListTemplate';
 
@@ -17,14 +15,14 @@ class VideosList extends Component {
     amount: this.props.amount
   };
 
-  componentWillMount(){
+  componentWillMount() {
     this.request(this.state.start, this.state.end)
   }
 
   request(start, end) {
-    if(this.state.teams.length < 1) {
+    if (this.state.teams.length < 1) {
       axios.get(`${URL}/teams`)
-        .then( response => {
+        .then(response => {
           this.setState({
             teams: response.data
           })
@@ -32,7 +30,7 @@ class VideosList extends Component {
     }
 
     axios.get(`${URL}/videos?_start=${start}&_end=${end}`)
-      .then( response => {
+      .then(response => {
         this.setState({
           videos: [...this.state.videos, ...response.data],
           start,
@@ -51,7 +49,9 @@ class VideosList extends Component {
 
     switch (type) {
       case "card":
-        return <VideosListTemplate data={this.state.videos} teams={this.state.teams}/>;
+        return (
+          <VideosListTemplate data={this.state.videos} teams={this.state.teams}/>
+        );
         break;
       default:
         return template = null
@@ -61,8 +61,8 @@ class VideosList extends Component {
   }
 
   loadMore() {
-      let end = this.state.end + this.state.amount;
-      this.request(this.state.end, end);
+    let end = this.state.end + this.state.amount;
+    this.request(this.state.end, end);
   }
 
   renderButton() {
@@ -83,9 +83,9 @@ class VideosList extends Component {
   render() {
     return (
       <div className={styles.videosList_wrapper}>
-        { this.renderTitle() }
-        { this.renderVideos(this.props.type) }
-        { this.renderButton() }
+        {this.renderTitle()}
+        {this.renderVideos(this.props.type)}
+        {this.renderButton()}
       </div>
     )
   }

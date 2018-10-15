@@ -1,18 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import styles from './videosList.module.css';
+
 
 import CardInfo from '../CardInfo/CardInfo';
 
 const VideosListTemplate = (props) => {
-  return props.data.map( item => {
+  return props.data.map(item => {
     return (
       <Link to={`/videos/${item.id}`} key={item.id}>
         <div className={styles.videoListItem_wrapper}>
           <div className={styles.left}
-            style={{
-              background: `url(/images/videos/${item.image})`
-            }}
+               style={{
+                 background: `url(/images/videos/${item.image})`
+               }}
           >
             <div></div>
           </div>

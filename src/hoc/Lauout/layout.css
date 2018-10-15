@@ -17,3 +17,7 @@ a {
 .allcontent {
   background-color: #eee;
 }
+
+.main {
+  min-height: calc(100vh - 86px);
+}
