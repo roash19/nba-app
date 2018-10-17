@@ -15,19 +15,19 @@ const Home = () => {
           dots: false
         }}
       />
-      <NewsList
-        type="card"
-        start={3}
-        amount={3}
-        loadmore="true"
-      />
-      <VideosList
-        type="card"
-        title={true}
-        loadmore={false}
-        start={0}
-        amount={3}
-      />
+      {/*<NewsList*/}
+        {/*type="card"*/}
+        {/*start={3}*/}
+        {/*amount={3}*/}
+        {/*loadmore="true"*/}
+      {/*/>*/}
+      {/*<VideosList*/}
+        {/*type="card"*/}
+        {/*title={true}*/}
+        {/*loadmore={false}*/}
+        {/*start={0}*/}
+        {/*amount={3}*/}
+      {/*/>*/}
     </div>
   );
 };
