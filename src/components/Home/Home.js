@@ -12,22 +12,25 @@ const Home = () => {
         start={0}
         end={4}
         settings={{
-          dots: false
+          dots: false,
+          autoplay: true,
+          speed: 2000,
+          autoplaySpeed: 5000,
         }}
       />
-      {/*<NewsList*/}
-        {/*type="card"*/}
-        {/*start={3}*/}
-        {/*amount={3}*/}
-        {/*loadmore="true"*/}
-      {/*/>*/}
-      {/*<VideosList*/}
-        {/*type="card"*/}
-        {/*title={true}*/}
-        {/*loadmore={false}*/}
-        {/*start={0}*/}
-        {/*amount={3}*/}
-      {/*/>*/}
+      <NewsList
+        type="card"
+        start={3}
+        amount={3}
+        loadmore="true"
+      />
+      <VideosList
+        type="card"
+        title={true}
+        loadmore={true}
+        start={0}
+        amount={3}
+      />
     </div>
   );
 };
